@@ -115,19 +115,21 @@ const services = [
   },
 ];
 
-function ServiceDetail({ service }) {
+function ServiceDetail({ service, hideHeader = false }) {
   const Icon = service.icon;
 
   return (
     <div className="bg-card border border-border p-6 sm:p-8 lg:p-10">
-      <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center flex-shrink-0 bg-accent text-accent-foreground">
-          <Icon size={24} className="sm:w-7 sm:h-7" />
+      {!hideHeader && (
+        <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center flex-shrink-0 bg-accent text-accent-foreground">
+            <Icon size={24} className="sm:w-7 sm:h-7" />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-light text-foreground">
+            {service.title}
+          </h3>
         </div>
-        <h3 className="text-xl sm:text-2xl font-light text-foreground">
-          {service.title}
-        </h3>
-      </div>
+      )}
 
       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-7">
         {service.description}
@@ -231,7 +233,7 @@ export default function Services() {
                   {/* Detalle en línea (móvil / tablet) */}
                   {isActive && (
                     <div className="lg:hidden mt-2.5">
-                      <ServiceDetail service={service} />
+                      <ServiceDetail service={service} hideHeader />
                     </div>
                   )}
                 </div>
@@ -241,7 +243,7 @@ export default function Services() {
 
           {/* Panel de detalle (escritorio) */}
           <div className="hidden lg:block">
-            <ServiceDetail service={services[activeIndex]} />
+            <ServiceDetail service={services[activeIndex]} hideHeader />
           </div>
         </div>
 

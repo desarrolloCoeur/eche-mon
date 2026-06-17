@@ -51,7 +51,7 @@ export default function Hero() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-light text-white leading-[0.95] tracking-tight">
             Echeagaray
             <br />
-            <span className="text-accent">Montes de Oca</span>
+            Montes de Oca
           </h1>
 
           {/* Tagline */}

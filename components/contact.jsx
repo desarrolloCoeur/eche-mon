@@ -39,16 +39,10 @@ export default function Contact() {
       link: "https://wa.me/523336764573",
     },
     {
-      icon: MessageCircle,
-      label: "WhatsApp",
-      value: "(+52) 322 139 95 15",
-      link: "https://wa.me/523221399515",
-    },
-    {
       icon: Mail,
       label: "Correo electrónico",
-      value: "contacto@emabogados.com.mx",
-      link: "mailto:contacto@emabogados.com.mx",
+      value: "juan@emabogados.com.mx",
+      link: "mailto:juan@emabogados.com.mx",
     },
     {
       icon: MapPin,

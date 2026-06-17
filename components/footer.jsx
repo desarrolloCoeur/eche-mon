@@ -96,15 +96,6 @@ export default function Footer() {
                   >
                     (+52) 33 36 76 45 73
                   </a>
-                  <span className="text-primary-foreground/30">/</span>
-                  <a
-                    href="https://wa.me/523221399515"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-accent transition-colors"
-                  >
-                    (+52) 322 139 95 15
-                  </a>
                 </div>
               </div>
               <div className="flex gap-2 sm:gap-3">
@@ -113,10 +104,10 @@ export default function Footer() {
                   className="text-accent flex-shrink-0 mt-0.5 sm:w-4 sm:h-4"
                 />
                 <a
-                  href="mailto:contacto@emabogados.com.mx"
+                  href="mailto:juan@emabogados.com.mx"
                   className="text-xs sm:text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
-                  contacto@emabogados.com.mx
+                  juan@emabogados.com.mx
                 </a>
               </div>
             </div>
