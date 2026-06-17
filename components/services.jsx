@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   Banknote,
   Building2,
@@ -156,6 +156,11 @@ function ServiceDetail({ service }) {
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // On desktop a service is always shown (tab behavior), so remember the last
+  // selected index to fall back to when the accordion is closed on mobile.
+  const lastIndexRef = useRef(0);
+  if (activeIndex !== null) lastIndexRef.current = activeIndex;
+
   return (
     <section
       id="servicios"
@@ -232,9 +237,7 @@ export default function Services() {
 
           {/* Panel de detalle (escritorio) */}
           <div className="hidden lg:block">
-            {activeIndex !== null && (
-              <ServiceDetail service={services[activeIndex]} />
-            )}
+            <ServiceDetail service={services[lastIndexRef.current]} />
           </div>
         </div>
 
