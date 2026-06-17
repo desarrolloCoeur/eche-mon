@@ -53,7 +53,8 @@ export default function Contact() {
     {
       icon: MapPin,
       label: "Guadalajara",
-      value: "Colimán 156, Colonia Ciudad del Sol, Guadalajara, Jalisco. C.P. 45050",
+      value:
+        "Colimán 156, Colonia Ciudad del Sol, Guadalajara, Jalisco. C.P. 45050",
     },
   ];
 
