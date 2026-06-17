@@ -115,22 +115,9 @@ const services = [
   },
 ];
 
-function ServiceDetail({ service, hideHeader = false }) {
-  const Icon = service.icon;
-
+function ServiceDetail({ service }) {
   return (
     <div className="bg-card border border-border p-6 sm:p-8 lg:p-10">
-      {!hideHeader && (
-        <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center flex-shrink-0 bg-accent text-accent-foreground">
-            <Icon size={24} className="sm:w-7 sm:h-7" />
-          </div>
-          <h3 className="text-xl sm:text-2xl font-light text-foreground">
-            {service.title}
-          </h3>
-        </div>
-      )}
-
       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-7">
         {service.description}
       </p>
@@ -194,7 +181,9 @@ export default function Services() {
               return (
                 <div key={index}>
                   <button
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() =>
+                      setActiveIndex(activeIndex === index ? null : index)
+                    }
                     aria-expanded={isActive}
                     className={`w-full flex items-center gap-3 sm:gap-4 p-4 sm:p-5 text-left border transition-all duration-300 group ${
                       isActive
@@ -233,7 +222,7 @@ export default function Services() {
                   {/* Detalle en línea (móvil / tablet) */}
                   {isActive && (
                     <div className="lg:hidden mt-2.5">
-                      <ServiceDetail service={service} hideHeader />
+                      <ServiceDetail service={service} />
                     </div>
                   )}
                 </div>
@@ -243,7 +232,9 @@ export default function Services() {
 
           {/* Panel de detalle (escritorio) */}
           <div className="hidden lg:block">
-            <ServiceDetail service={services[activeIndex]} hideHeader />
+            {activeIndex !== null && (
+              <ServiceDetail service={services[activeIndex]} />
+            )}
           </div>
         </div>
 

@@ -49,7 +49,7 @@ export default function Header() {
     { name: "Inicio", href: "#inicio" },
     { name: "Nosotros", href: "#nosotros" },
     { name: "Servicios", href: "#servicios" },
-    { name: "Ubicaciones", href: "#ubicaciones" },
+    { name: "Oficinas", href: "#ubicaciones" },
   ];
 
   return (

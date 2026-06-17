@@ -49,7 +49,7 @@ export default function Footer() {
                 { label: "Inicio", href: "#inicio" },
                 { label: "Nosotros", href: "#nosotros" },
                 { label: "Servicios", href: "#servicios" },
-                { label: "Ubicaciones", href: "#ubicaciones" },
+                { label: "Oficinas", href: "#ubicaciones" },
                 { label: "Contacto", href: "#contacto" },
               ].map((item) => (
                 <a
