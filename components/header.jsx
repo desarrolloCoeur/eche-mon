@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
 import Image from "next/image";
 import { X } from "lucide-react";
 
@@ -46,7 +45,6 @@ export default function Header() {
   };
 
   const navItems = [
-    { name: "Inicio", href: "#inicio" },
     { name: "Nosotros", href: "#nosotros" },
     { name: "Servicios", href: "#servicios" },
     { name: "Oficinas", href: "#ubicaciones" },
@@ -66,9 +64,10 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="flex items-center group"
+            <a
+              href="#inicio"
+              onClick={(e) => handleNavClick(e, "#inicio")}
+              className="flex items-center group cursor-pointer"
               style={{
                 animation:
                   "fade-in-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both",
@@ -83,7 +82,7 @@ export default function Header() {
                   isScrolled ? "" : "brightness-0 invert"
                 }`}
               />
-            </Link>
+            </a>
 
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               {navItems.map((item, index) => (
